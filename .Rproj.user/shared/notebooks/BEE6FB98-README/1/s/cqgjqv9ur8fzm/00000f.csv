@@ -1,0 +1,8 @@
+"0","# HR and 95% CI: 1.07 (1.05, 1.09)"
+"0","estimate = 1.07"
+"0","lo       = 1.05"
+"0","hi       = 1.09"
+"0",""
+"0","ggEvalue(estimate, lo, hi)"
+"2","Error in as_tibble(.) : could not find function ""as_tibble""
+"
