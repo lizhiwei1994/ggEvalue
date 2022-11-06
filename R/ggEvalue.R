@@ -23,16 +23,16 @@ ggEvalue <- function(estimate, lo, hi,
                      text.col = c('#90353b', '#1a476f'),
                      line.col = c('#0d680d', '#ff4602')){
 
-  if (hr < 1) hr = 1/hr
+  if (estimate < 1) estimate = 1/estimate
   if (lo < 1) lo = 1/lo
   if (hi < 1) hi = 1/hi
 
   xmax = xlim[2]
   ymax = ylim[2]
 
-  x.est = seq(hr, xmax, by = 0.01)
-  y.est = hr * (hr - 1)/(x.est - hr) + hr
-  e.est = hr+sqrt(hr*(hr-1))
+  x.est = seq(estimate, xmax, by = 0.01)
+  y.est = estimate * (estimate - 1)/(x.est - estimate) + estimate
+  e.est = estimate+sqrt(estimate*(estimate-1))
 
   x.ci = seq(lo, xmax, by = 0.01)
   y.ci = lo * (lo - 1)/(x.ci - lo) + lo
