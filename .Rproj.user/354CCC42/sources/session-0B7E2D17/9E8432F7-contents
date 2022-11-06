@@ -4,4 +4,4 @@ a = 1.07
 a1 = 1.05
 a2 = 1.09
 
-ggEvalue(a, a1, a2)
+ggEvalue::ggEvalue(a, a1, a2)

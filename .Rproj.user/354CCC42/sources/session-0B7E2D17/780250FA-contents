@@ -11,6 +11,7 @@
 #' @importFrom ggnewscale new_scale_color
 #' @importFrom glue glue
 #' @importFrom rlang .data
+#' @importFrom tidyr pivot_longer
 #' @import ggplot2
 #' @import dplyr
 #' @return a ggplot object.
@@ -22,6 +23,8 @@ ggEvalue <- function(estimate, lo, hi,
                      point.col = c('#90353b', '#1a476f'),
                      text.col = c('#90353b', '#1a476f'),
                      line.col = c('#0d680d', '#ff4602')){
+
+  options(warn=-1)
 
   if (estimate < 1) estimate = 1/estimate
   if (lo < 1) lo = 1/lo
