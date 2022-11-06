@@ -1,0 +1,73 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/",
+  out.width = "100%",
+  warning = FALSE,
+  cache = TRUE
+)
+```
+
+# ggEvalue: plot E value using ggplot2. 
+
+## :bar_chart: Overview
+
+The [ggEvalue](need a link) can calculate the E value and 95% CI, then plot it.
+
+## :arrow_double_down: Installation
+
+You can install the development version of **ggEvalue** from Github with:
+```{r eval=FALSE}
+devtools::install_github('lizhiwei1994/ggEvalue')
+```
+
+## :beginner: Usage
+
+Say that we have a HR and 95% CI corresponding to 1.07 (1.05, 1.09).
+
+We can get E value curve by running the code below.
+
+```{r eval=FALSE}
+# HR and 95% CI: 1.07 (1.05, 1.09)
+estimate = 1.07
+lo       = 1.05
+hi       = 1.09
+
+ggEvalue(estimate, lo, hi)
+```
+
+
+## :page_with_curl: About Author
+
+Zhiwei Li (lizhiwei@ccmu.edu.cn)
+
+Department of Epidemiology and Health Statistics
+
+School of Public Health, Capital Medical University
+
+No.10 Xitoutiao, Youanmen Wai Street
+
+Beijing, 100069
+
+## :page_with_curl: Citation
+
+If my R package is useful to you, please cite it.
+
+Li Z (2022). *ggEvalue: plot E value using ggplot2.* R package version 0.1.0.
+
+```{r eval=FALSE}
+@Manual{,
+  title = {ggEvalue: plot E value using ggplot2},
+  author = {Zhiwei Li},
+  year = {2022},
+  note = {R package version 0.1.0},
+}
+```
+

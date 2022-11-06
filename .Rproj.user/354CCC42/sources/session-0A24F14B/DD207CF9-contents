@@ -1,0 +1,9 @@
+rowr::cbind.fill(1:2,1:10, fill = NA)
+
+x <- 1:2
+y <- 1:10
+n <- max(length(x), length(y))
+length(x) <- n                      
+length(y) <- n
+
+cbind(x, y)

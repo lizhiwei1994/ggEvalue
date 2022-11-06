@@ -1,0 +1,22 @@
+Package: ggEvalue
+Type: Package
+Title: ggEvalue
+Version: 0.1.0
+Authors@R: 
+    person(given = "Zhiwei",
+           family = "Li",
+           role = c("aut", "cre"),
+           email = "lizhiwei@ccmu.edu.cn")
+Maintainer: The package maintainer <lizhiwei@ccmu.edu.cn>
+Description: plot E value using ggplot2.
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.2.1
+Imports: 
+    dplyr,
+    ggnewscale,
+    ggplot2,
+    glue,
+    magrittr,
+    rlang
