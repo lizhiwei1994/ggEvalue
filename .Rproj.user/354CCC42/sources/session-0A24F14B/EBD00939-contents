@@ -1,4 +1,5 @@
-devtools::install_github('lizhiwei1994/ggEvalue')
+devtools::install_github('lizhiwei1994/ggEvalue', force = TRUE)
+
 
 library(ggEvalue)
 
@@ -6,4 +7,4 @@ a = 1.07
 a1 = 1.05
 a2 = 1.09
 
-ggEvalue(a, a1, a2, xlim = c(1,2), ylim = c(1,2))
+ggEvalue(a, a1, a2, xlim = c(1,4), ylim = c(1,2))

@@ -5,25 +5,87 @@
 
 ## :bar_chart: Overview
 
-The
-[tidymodel](https://cran.r-project.org/web/packages/tidymodels/index.html)
-and
-[survival](https://cran.r-project.org/web/packages/survival/index.html)
-packages are good enough to do most of the work of fitting cox models
-and extracting model results.
-[TidyCox](https://github.com/lizhiwei1994/tidycox) package provides some
-tiny functions to make fitting cox models and extracting model results
-more easy.
+The [ggEvalue](need%20a%20link) can calculate the E value and 95% CI,
+then plot it.
 
 ## :arrow_double_down: Installation
 
-You can install the development version of **tidycox** from Github with:
+You can install the development version of **ggEvalue** from Github
+with:
 
 ``` r
-devtools::install_github('lizhiwei1994/tidycox')
+devtools::install_github('lizhiwei1994/ggEvalue')
 ```
 
 ## :beginner: Usage
+
+Say that we have a HR and 95% CI corresponding to **1.07 (1.05, 1.09)**.
+
+We can get E value curve by running the code below.
+
+``` r
+library(ggEvalue)
+# HR and 95% CI: 1.07 (1.05, 1.09)
+estimate = 1.07
+lo       = 1.05
+hi       = 1.09
+
+ggEvalue(estimate, lo, hi)
+```
+
+<img src="man/figures/unnamed-chunk-2-1.png" width="100%" />
+
+As you can see, the text overlap in the above figure. We can set the
+range of x and y axis to show clearer text.
+
+``` r
+ggEvalue(estimate, lo, hi, 
+         xlim = c(1,2), ylim = c(1,2))
+```
+
+<img src="man/figures/unnamed-chunk-3-1.png" width="100%" />
+
+Now, the text can be clearly shown in the figure.
+
+If you want to change the color of lines, points and text in the figure,
+you can do the following.
+
+The first color is for 95% CI’s line, point and text. The second is for
+E value.
+
+``` r
+ggEvalue(estimate, lo, hi, 
+         xlim = c(1,2), ylim = c(1,2),
+         point.col = c('red', 'blue'),
+         line.col = c('red', 'blue'),
+         text.col = c('red', 'blue'))
+```
+
+<img src="man/figures/unnamed-chunk-4-1.png" width="100%" />
+
+Since `ggEvalue` returns a ggplot object, you can use `+` to add other
+ggplot plotting functions.
+
+``` r
+library(ggplot2)
+
+p = ggEvalue(estimate, lo, hi, 
+         xlim = c(1,2), ylim = c(1,2),
+         point.col = c('red', 'blue'),
+         line.col = c('red', 'blue'),
+         text.col = c('red', 'blue'))
+
+p + labs(title = 'This is a title')
+```
+
+<img src="man/figures/unnamed-chunk-5-1.png" width="100%" />
+
+``` r
+
+p + theme_gray()
+```
+
+<img src="man/figures/unnamed-chunk-5-2.png" width="100%" />
 
 ## :page_with_curl: About Author
 

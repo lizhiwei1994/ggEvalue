@@ -34,6 +34,7 @@ Say that we have a HR and 95% CI corresponding to 1.07 (1.05, 1.09).
 We can get E value curve by running the code below.
 
 ```{r eval=FALSE}
+library(ggEvalue)
 # HR and 95% CI: 1.07 (1.05, 1.09)
 estimate = 1.07
 lo       = 1.05
